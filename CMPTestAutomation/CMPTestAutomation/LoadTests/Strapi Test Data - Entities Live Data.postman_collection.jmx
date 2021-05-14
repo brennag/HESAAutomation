@@ -1,0 +1,1817 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Strapi Test Data - Entities Live Data" enabled="true">
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Http URL/API Test" enabled="true">
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">80</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">900</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">3600</stringProp>
+        <stringProp name="ThreadGroup.delay">60000</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+          <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Awarding body role" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Awarding body role&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;AwardingBodyRole&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity does not record bodies that accredit a course awarded by another organisation. For example ITT courses in England that lead to Qualified Teacher Status awarded by the DfE, should not have the DfE recorded in this entity. &lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All Qualifications where Qualification.QUALCAT does not equal P0002.&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity records the body or bodies whose degree awarding powers underpin the Qualification.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;This entity records which organisation is the awarding body for the qualification, to monitor dual or joint awards.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Awarding body role" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Collaborative provision" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Collaborative provision&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;CollaborativeProvision&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity collects information regarding two types of collaborative provision arrangements:&lt;/p&gt;&lt;ol type=\&quot;1\&quot;&gt;&lt;li&gt;Collaborative provision with an overseas provider.&lt;/li&gt;&lt;li&gt;Formal collaborative arrangements to provide doctoral research training. This may be concurrent (students being jointly supervised) or sequential (the student starting at one provider and transferring to another).&lt;p&gt;For more details on these types please see the guidance in CollaborativeProvision.COLPROVTYPEID.&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;The entity serves two purposes:&lt;/p&gt;&lt;ol type=\&quot;1\&quot;&gt;&lt;li&gt;&lt;p&gt;   Identifying Engagements that are part of one of these collaborative arrangements. The type is identified in CollaborativeProvision.COLPROVTYPEID.&lt;/li&gt;&lt;li&gt;&lt;p&gt;   For sequential collaborative arrangements for doctoral research students, the provider that a student transfers to will record the identifiers returned by the provider the student transferred from in CollaborativeProvision.PARTNERSID CollaborativeProvision.PARTNERNUMHUS and CollaborativeProvision.PARTNERUKPRN. &lt;/li&gt;&lt;/ol&gt;&lt;p&gt;For doctoral research students, this entity should be used in conjunction with the SupervisorAllocation entity which records the Unit of Assessment and organisation of the student&apos;s supervisor(s).&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All Engagements where a CollaborativeProvision.COLPROVTYPEID applies.&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity indicates which Engagements are part of a collaborative provision arrangement with an overseas provider or to provide doctoral research training, and holds information regarding the arrangement.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To identify and monitor different types of collaborative provision arrangements, to track students in cases of sequential collaboration.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Collaborative provision" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Course" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Course&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;Course&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;Every active StudentCourseSession is linked to a Course.&lt;/p&gt;&lt;p&gt;Courses can be returned without associated StudentCourseSessions if it is easier for a provider to return all Courses rather than just those that are active in the reporting year.&lt;/p&gt;&lt;p&gt;A Course will have a specific qualification aim with associated subject(s) as well as a number of other attributes.&lt;/p&gt;&lt;p&gt;A new Course would be required to be returned where any of the following attributes change:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Course.BITTM&lt;/li&gt;&lt;li&gt;Course.CLSDCRS&lt;/li&gt;&lt;li&gt;Course.FULLYFLEX&lt;/li&gt;&lt;li&gt;Course.FUNDLEVEL&lt;/li&gt;&lt;li&gt;Course.QUALID (if the Course is associated with a new Qualification, a new Course is required).&lt;/li&gt;&lt;li&gt;Course.SANDWICH&lt;/li&gt;&lt;li&gt;Course.TTCID&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;A new Course is also required based on changes to the CourseRole and QualificationSubject entities, please see the entity guidance for more information.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All Courses&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity holds the attributes for a given Course that students engage with.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To hold fields that describe courses.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Course" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Course initiative" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Course initiative&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;CourseInitiative&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity captures the specific Initiative(s) associated with a Course where this applies to all students on the Course. Where the initiative applies to a subset of students on a Course, this must be identified in the StudentInitiatives entity for each applicable student.&lt;/p&gt;&lt;p&gt;CourseInitiative.INITIATIVEID is used to specify the scheme associated with a Course.&lt;/p&gt;&lt;p&gt;Where a Course has more than a single specific scheme associated with it, the entity can be returned multiple times.&lt;/p&gt;&lt;p&gt;Initiatives may only apply to a Course for a period of time, the valid from and to dates therefore indicate the period of time during which the initiative is valid. All students associated with the Course between these dates are therefore considered to be associated with the specified initiative(s). A valid to date is not required to be submitted as it may not be known how long an initiative will apply for.  This prevents the need for a new Course to be created each time the associated initiatives change.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All Courses where a named Initiative applies&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity records the specific initiative(s) associated with a Course.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To enable monitoring of specific schemes of importance to HESA&apos;s public purpose customers.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Course initiative" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Course reference" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Course reference&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;CourseReference&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity is optional to return and can be used by providers to record additional identifiers they hold for a Course if it is useful to do so. &lt;/p&gt;&lt;p&gt;The type of identifier is recorded in CourseReference.COURSEREFRNCIDTYPE and the identifier is recorded in CourseRole.COURSEREFCID&lt;/p&gt; &quot;,&#xd;
+    &quot;Coverage&quot;: &quot;Optional for all Courses&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity records identifiers associated with a Course.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To allow providers to record additional identifiers associated with a Course. &quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Course reference" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Course role" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Course role&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;CourseRole&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity records the organisations (CourseRole.HESAID) that play a particular role (CourseRole.ROLETYPE) in the associated Course.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Delivery organisations (all providers)&lt;/strong&gt;&lt;p&gt;For all providers, this entity records the organisation(s) involved in the delivery of teaching or supervision of research of the Course, including associated proportions. This information should reflect the entirety of the Course and should take into account franchise Modules. The proportions of different organisations may be dependent on student Module choice. In these cases, the proportions returned should be based on the most common choices from students in previous years or the expected pathways for new Courses.&lt;/p&gt;&lt;p&gt;For example, a four-year course will have the first year delivered by Provider A and the remaininng 3 years delivered by provider B.&lt;/p&gt;&lt;p&gt;The CourseRole entity would be returned twice:&lt;/p&gt;&lt;table border=\&quot;1\&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Field&lt;/th&gt;&lt;th&gt;CourseRole 1&lt;/th&gt;&lt;th&gt;CourseRole 2&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;CourseRole.HESAID&lt;/td&gt;&lt;td&gt;Provider A&apos;s UKPRN&lt;/td&gt;&lt;td&gt;Provider B&apos;s UKPRN&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CourseRole.ROLETYPE&lt;/td&gt;&lt;td&gt;202&lt;/td&gt;&lt;td&gt;202&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CourseRole.CRPROPORTION&lt;/td&gt;&lt;td&gt;25&lt;/td&gt;&lt;td&gt;75&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;If the provider doing the majority of the teaching or supervision of researchchanges, or there is a new teaching partner, a new Course would be required to be submitted and students associated with the appropriate version.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Funders (providers in Northern Ireland, Scotland and Wales)&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;For providers in Northern Ireland, Scotland and Wales, this entity additionally records the organisation(s) that fund the Course, including associated proportions. The element of the Course that is funded by the tuition fee should not be taken into account. If the Course is wholly funded by tuition fees, no funders should be returned.&lt;/p&gt;&lt;p&gt;For example, a Course is funded 50% by tuition fees, 25% by the Arts &amp;amp; Humanities Research Council (AHRC) and 25% by the EU Commission (EC)&lt;/p&gt;&lt;p&gt;The CourseRole entity would be returned twice and the tuition fee element would not be taken into account:&lt;/p&gt;&lt;table border=\&quot;1\&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Field&lt;/th&gt;&lt;th&gt;CourseRole 1&lt;/th&gt;&lt;th&gt;CourseRole 2&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;CourseRole.HESAID&lt;/td&gt;&lt;td&gt;5002&lt;/td&gt;&lt;td&gt;5013&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CourseRole.ROLETYPE&lt;/td&gt;&lt;td&gt;401&lt;/td&gt;&lt;td&gt;401&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CourseRole.CRPROPORTION&lt;/td&gt;&lt;td&gt;50&lt;/td&gt;&lt;td&gt;50&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;If the funders change, a new Course is not required to be returned, the CourseRole information must be updated to reflect the new funding arrangements.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All Courses&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity describes the roles that organisations have in the associated Course.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To allow the Office for Students to attribute students to a named delivery organisation for the purposes of reporting on &apos;teaching provider&apos; consistently (regardless of whether the student falls within an entry, continuing or qualifying cohort). This is used in Teaching Excellence and Student Outcomes Framework (TEF) metrics, NSS results and other sources of student information (DiscoverUni), regional analysis, and analysis of student outcomes used to evidence providers&apos; compliance with registration conditions concerned with quality and standards. To allow monitoring of the sources of funding for Courses in order to understand the extent to which various bodies are supporting students for providers in Northern Ireland, Scotland and Wales.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Course role" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Curriculum accreditation" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Curriculum accreditation&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;CurriculumAccreditation&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity records where the Course has an accreditation from a Professional, Statutory or Regulatory body (PSRB) for architecture, teaching and clinical bodies.&lt;/p&gt;&lt;p&gt;A Course can have multiple accreditations, one CurruciulumAccreditation entity is returned per accreditation.&lt;/p&gt;&lt;p&gt;If the Course has no relevant accreditation, this entity is not returned.&lt;/p&gt;&lt;p&gt;Courses can gain and lose accreditation, the valid from and to dates therefore indicate the period of time during which the accreditation is valid. All students associated with the Course between these dates are therefore considered to be aiming for the stated accreditation. A valid to date is not required to be submitted for an accreditation that is still valid as it may not be known how long an accreditation may be held. This prevents the need for a new Course to be created each time it gains or loses accreditation.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Teacher training courses&lt;/strong&gt;&lt;/p&gt;For proivders in Northern Ireland and Scotland, this entity records the type of teacher training.For providers in England and Wales, this information is recorded in StudentAccreditationAim.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All Courses where at providers in Northern Ireland and Scotland where Course.TTCID = 01 or 02. All other Courses where applicable.&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity records the accreditation that a Professional, Statutory or Regulatory body (PSRB) has given to a Course.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To enable identification of Courses which are relevant to particular PSRBs. To identify accreditation which a Course has, including teacher training and clinical accreditations.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Curriculum accreditation" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Disability" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Disability&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;Disability&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This data must be returned for all students in coverage at the start of their Engagement i.e. by the end of the reference period in which their first associated StudentCourseSession begins. If the data is not known by the provider 99 &apos;Not available&apos; should be returned in Disability.DISABILITY.&lt;/p&gt;&lt;p&gt;This data must be updated throughout a Student&apos;s Engagement where applicable.&lt;/p&gt;&lt;p&gt;Advance HE suggested question:&lt;/p&gt;&lt;p&gt;Do you have an impairment, health condition or learning difference that has a substantial or long term impact on your ability to carry out day to day activities?&lt;/p&gt;&lt;p&gt;Advance HE also recommend including additional explanation for this question such as:&lt;/p&gt;&lt;p&gt;Under the Equality Act 2010, a person is considered to have a disability &apos;if they have a physical or mental impairment, and the impairment has a substantial and long-term adverse effect on his or her ability to carry out normal day-to-day activities&apos;. &apos;Substantial&apos; is defined by the Act as &apos;more than minor or trivial&apos;. An impairment is considered to have a long term effect if:&lt;/p&gt;&lt;ul&gt;        &lt;li&gt;it has lasted for at least 12 months&lt;/li&gt;        &lt;li&gt;it is likely to last for at least 12 months, or&lt;/li&gt;        &lt;li&gt;it is likely to last for the rest of the life of the person.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Normal day-to-day activities are not defined in the Act, but in general they are things people do on a regular or daily basis, for example eating, washing, walking, reading, writing or having a conversation.  Only serious visual impairments are covered by the Equality Act 2010. For example, a person whose eyesight can be corrected through the use of prescription lenses is not covered by the Act; neither is an inability to distinguish between red and green. The same logic does not apply to hearing aids. If someone needs to wear a hearing aid, then they are likely to be covered by the Act. However, both hearing and visual impairments have to have a substantial adverse effect on the ability to carry out normal day-to-day activities in order for a person to be covered by the Act.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All Students where Engagement.INCOMINGEXCHANGE does not exist. Must not be returned for Students outside of the stated coverage.&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity records the type of disability or disabilities that a Student has, on the basis of the Student&apos;s own self-assessment.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To permit disability-based analysis; for monitoring levels and trends in participation by particular groups of people; to monitor take-up of Disabled Students&apos; Allowance as Disabled Students&apos; Allowance is now not means tested; to support the allocation for disability premium; to permit analysis based on type of disability&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Disability" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Engagement" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Engagement&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;Engagement&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;One Engagement is required to be returned for each commitment a student has towards an educational aim.&lt;/p&gt;&lt;p&gt;If a student studies for multiple qualifications or credit with a provider, they may have more than one Engagement, either concurrently or consecutively.&lt;/p&gt;&lt;p&gt;In general, a Student will have more than one Engagement where they have more than one distinct educational aim.&lt;/p&gt;&lt;p&gt;For guidance on when Engagements should be created or closed, please see the &lt;a href =\&quot;https://www.hesa.ac.uk/collection/student/datafutures/guidance_engagement.pdf\&quot;&gt;Further guidance on returning Engagements&lt;/a&gt; document.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All Students&quot;,&#xd;
+    &quot;Description&quot;: &quot;The Engagement records a student&apos;s commitment to an educational aim, and its realisation over time.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To record details of a student&apos;s commitment to an educational aim, to record where students have multiple commitments.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Engagement" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Entry Profile" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Entry Profile&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;EntryProfile&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity records information about students at the start of their Engagement. The fields within this entity should therefore not be updated based on any changes that happen during an Engagement as only the position on entry is recorded.&lt;/p&gt;&lt;p&gt;The EntryProfile must be returned in the first reference period in which an Engagement is returned. It does not need to be returned in subsequent reference periods however the EntryProfile can be included in subsequent reference periods if providers wish to include this is their file.&lt;/p&gt;&lt;p&gt;If the EntryProfile is returned again, all the EntryProfile information must be returned, including all EntryQualificationAwards. Any data that is missing from the EntryProfile when returned again will be viewed as a correction to previously incorrect data and the information will no longer be associated with the student.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All Engagements&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity records information that relates to the student as at the start of their Engagement.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;This entity is defined to hold those fields that describe the situation at the beginning of the Engagement.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Entry Profile" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Entry qualification award" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Entry qualification award&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;EntryQualificationAward&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity collects information regarding the qualification(s) students hold on entry to their Engagement for two purposes: tariff calculations for level 3 qualifications and Undergraduate qualifications for teacher training students in England, Northern Ireland and Wales.&lt;/p&gt;&lt;p&gt;It is important that this information is returned at the start of a students Engagement I.e. in the reference period in which the first associated StudentCourseSession begins. It is not expected that this would be added to or amended following this unless data quality issues are identified.&lt;/p&gt;&lt;p&gt;&lt;strong&gt; Level 3 qualifications (all providers)&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Where the students highest qualification on entry to their Engagement (recorded in EntryProfile.HIGHESTQOE) is at level 3, the qualification type, grade and subject of the tariff bearing, level 3 qualifications held by the student are recorded. This entity should be returned multiple times where the student holds multiple tariff bearing qualifications on entry. Only one subject can be recorded per level 3 entry qualification.&lt;/p&gt;&lt;p&gt;For providers in Northern Ireland, Scotland and Wales is it encouraged to supply this information for all students whose highest qualification on entry is at level 3 however this is only required for UCAS entrants.&lt;/p&gt;&lt;p&gt;For providers in England this is additionally collected for any students whose permanent home address on entry is in the UK and whose highest qualification on entry is at level 3 or is an access to HE course.&lt;/p&gt;&lt;p&gt;HESA will use this data to calculate the tariff scores held by students on entry to their Engagement.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Teacher training students in England, Northern Ireland and Wales&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Undergraduate degree information is required for students on teacher training Courses  in England, Northern Ireland and Wales with one of the following study intentions:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Postgraduate Certificate in Education or Professional Graduate Diploma in Education&lt;/li&gt;&lt;li&gt;Postgraduate Diploma in Education&lt;/li&gt;&lt;li&gt;Professional Graduate Certificate in Education&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The type, result and subject(s) of the undergraduate qualification are collected in EntryQualificationAward.QUALTYPEID, EntryQualificationAward.QUALRESULT and EntryQualificationSubject.SUBJECTID. Up to five subjects can be returned however more than three subjects would generally be regarded as exceptional.&lt;/p&gt;&lt;p&gt;Where the student does not hold an undergraduate degree or the details are not known, the entity should not be returned for these students.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All EntryProfile entities at providers in England where (EntryProfile.HIGHESTQOE = X0000 or X0001 or has a HESA level of P excluding P0013 and is subject to UCAS tariff) and associated EntryProfile.PERMADDCOUNTRY = XF, XG, XH, XI, XK, XL, GG, JE or IM.All EntryProfile entities at providers in England, Northern Ireland, Scotland or Wales where EntryProfile.UCASSCHEMECODE exists and this data has been provided by UCAS.All Students at providers in England, Northern Ireland and Wales where Qualification.QUALCAT = M0016, M0018 or H0013 and Engagement.INCOMINGEXCHANGE does not exist.&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity records the qualification(s) held by the Student on entry to their Engagement.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To permit analysis of entry cohorts including tariff calculations, to monitor entry qualifications for ITT students.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Entry qualification award" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Entry qualification subject" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Entry qualification subject&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;EntryQualificationSubject&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity collects the subject(s) associated with the qualification in the associated EntryQualificationAward.QUALTYPEID.&lt;/p&gt;&lt;p&gt;Where the EntryQualificationAward.QUALTYPEID is a level three qualification, only one subject is returned.&lt;/p&gt;&lt;p&gt;For teacher training students in England, Northern Ireland and Wales up to five subjects can be returned however more than three subjects would generally be regarded as exceptional. There would be one occurrence of the entity for each subject.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All EntryQualificationAward entities.&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity records the subject(s) associated with the entry qualification.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To monitor entry qualifications by subjects, to compare entry qualification subjects to subjects studied.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Entry qualification subject" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Funding and monitoring" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Funding and monitoring&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;FundingAndMonitoring&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity records the funding characteristics for the associated Student course session.&lt;/p&gt;&lt;p&gt;The entity must be returned where the Student course session falls into the coverage of one or more of the fields within the entity.&lt;/p&gt;&lt;p&gt;Not every Student course session will be in receipt of funding, however the entity will still need to be returned where any of the fields are applicable.&lt;/p&gt;&lt;p&gt;Each field within this entity should only have one value at a given time and therefore only one FundingAndMonitoring entity, containing the relevant fields, is required per StudentCourseSession.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All StudentCourseSessions that are in coverage for one of the fields in the FundingAndMonitoring entity.&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity collects key data required by regulatory or funding bodies.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To monitor funding arrangements and to collect data relevant to funding for each Student course session where this cannot be captured elsewhere.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Funding and monitoring" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Funding body" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Funding body&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;FundingBody&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity records the funding body or bodies that are responsible for funding for the associated StudentCourseSession.&lt;/p&gt;&lt;p&gt;This refers to the student being eligible for funding from the given body.&lt;/p&gt;&lt;p&gt;The only exception to this is in the case of employer funding (providers in Wales only), this refers to the student being in receipt of funding from their employer.&lt;/p&gt;&lt;p&gt;If more than one body applies, this entity is returned once for each applicable funding body.&lt;/p&gt;&lt;p&gt;The funding body is returned in FundingBody.FUNDINGBODY, for more information on the return of this field, please see the FundingBody.FUNDINGBODY guidance.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All StudentCourseSessions where applicable&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity collects the body or bodies that are responsible for allocating funding for a fundable StudentCourseSession.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To monitor funding arrangements, to determine which students are fundable.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Funding body" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Language proficiency" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Language proficiency&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;LanguageProficiency&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity records the student&apos;s proficiency in a given language.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;For providers in Wales&lt;/strong&gt;&lt;/p&gt;This is required for students with a permanent home address on entry in Wales studying at Welsh providers.&lt;/p&gt;&lt;p&gt;Providers in Wales are required to return the entity for each of the proficiency type that a student has and the level (or ability) is only returned where the proficiency type is 02 &apos;Speak&apos;&lt;/p&gt;&lt;p&gt;It is expected that this entity would be updated during the lifetime of an Engagement to allow for a student to become more proficient over time.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;For providers in Scotland&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Providers in Scotland are required to collect information about whether students with a permanent home address in the UK are British Sign Language (BSL) users.&lt;/p&gt;&lt;p&gt;The Scottish Government have defined a BSL user as a deaf and/or deafblind person (someone who received the language in a tactile form due to sight loss) whose first or preferred language is British Sign Language. &lt;p&gt;It is expected that this entity would be updated during the lifetime of an Engagement.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All Students at provider in Wales where EntryProfile.PERMADDCOUNTRY = XI and Engagement.INCOMINGEXCHANGE does not exist.All Students at providers in Scotland where EntryProfile.PERMADDCOUNTRY = XF, XG, XH, XI, XK, XL, GG, JE, IM where the student is a BSL user.&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity records a Student&apos;s ability to communicate in a given language.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To enable monitoring of Welsh speaking students in Wales. To monitor the number of users of British Sign Language at Scottish providers to aid the Scottish Government&apos;s policy regarding improving the experience of BSL users in Scotland. &quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Language proficiency" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Leaver" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Leaver&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;Leaver&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity collects information about the student leaving their Engagement including the date they left and a reason for leaving.&lt;/p&gt;&lt;p&gt;This entity also collects where a student is transferring to where the reason for a student leaving the Engagement is due to a transfer to another provider as part of a sequential doctoral research training programme.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All Engagements that have ended.&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity holds details of a Student leaving an Engagement.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To record information regarding leavers including the date, reason for leaving and the intended destination for sequential collaboration arrangements of doctoral research training.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Leaver" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Module" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Module&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;Module&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;Providers in England that are registered with the Office for Students in the &apos;Approved&apos; category are not required to return Module data but can do so optionally.&lt;/p&gt;&lt;p&gt;Providers in England that are registered with the Office for Students in the &apos;Approved (fee cap)&apos; category must return Module data.&lt;/p&gt;&lt;p&gt;Further information regarding the OfS register can be found &lt;a href =\&quot;https://www.officeforstudents.org.uk/advice-and-guidance/the-register/the-ofs-register\&quot;&gt;here&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Module data is also optional for all postgradaute research and incoming exchange students.&lt;/p&gt;&lt;p&gt;Although the term &apos;Module&apos; is used to describe this entity, the definition covers any discrete unit of learning and/or research. The aim of collecting this information is to provide a greater level of detail about the student&apos;s activity than can be ascertained from the course-level information. Specifically, this includes the detail of subjects studied during the year, and credit scheme information.&lt;/p&gt;&lt;p&gt;In cases where students are studying within academic structures that are not &apos;modular&apos;, the module could be defined as a single unit to cover a year&apos;s worth of activity on a course.&lt;/p&gt;&lt;p&gt;A new Module would be required to be returned where any of the following attributes change:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Module.CRDTPTS&lt;/li&gt;&lt;li&gt;Module.CRDTSCM&lt;/li&gt;&lt;li&gt;Module.FTE&lt;/li&gt;&lt;li&gt;Module.LANGUAGEID&lt;/li&gt;&lt;li&gt;Module.LEVLPTS&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;A new Module is also required based on changes to the ModuleCostCentre, ModuleDeliveryRole and ModuleSubject entities, please see the entity guidance for more information.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;HE providers in England and Northern Ireland&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;APEL modules should not be returned in the Student record, this is in order to prevent confusion over genuine and APEL modules and to avoid FTE being allocated incorrectly. Please note this affects only OfS and DfE(NI) funded providers.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All units of study at providers in Northern Ireland, Scotland and Wales and Approved (fee cap) providers in England where Engagement.INCOMINGEXCHANGE does not exist and Qualification.QUALCAT starts with E, M, H, I, J or C.Optional for each unit of study at Approved providers in England or where Engagement.INCOMINGEXCHANGE exists or where Qualification.QUALCAT starts with D or L.&quot;,&#xd;
+    &quot;Description&quot;: &quot;A module is a self-contained, formally structured unit of study, with a coherent and explicit set of learning outcomes and assessment criteria.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;This entity exists to hold information about modules/units of activity that students undertake.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Module" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Module cost centre" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Module cost centre&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;ModuleCostCentre&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity records the cost centre(s) associated with the specified Module. HESA cost centre information is used in conjunction with FTE information recorded for each StudentCourseSession. It is optional for providers to submit this entity for PGR students (courses where Qualification.QUALCAT starts with D or L)&lt;/p&gt;&lt;p&gt;Where the cost centres for a module change, a new module must be returned and students associated with the appropriate version.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All Module entities where Qualification.QUALCAT starts with E, M, H, I, J or C.Optional for Modules where Qualification.QUALCAT starts with D or L&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity records the cost centre(s) for a Module.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To calculate FTE across cost centres, to allocate activity to price groups, to aid HEFCW&apos;s review of funding.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Module cost centre" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Module delivery role" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Module delivery role&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;ModuleDeliveryRole&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity records the organisations that are involved in the delivery of a Module.&lt;/p&gt;&lt;p&gt;Where the returning provider delivers 100% of a Module, this entity does not need to be returned.&lt;/p&gt;&lt;p&gt;Where the reporting provider does not deliver 100% of a Module, one ModuleDeliveryRole is returned for each organisation that delivers part of the Module, including the reporting provider where applicable.&lt;/p&gt;&lt;p&gt;If the provider doing the majority of delivery changes, or there is a new delivery partner, a new Module would be required to be submitted and students associated with the appropriate version.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All Modules at providers in Northern Ireland, Scotland and Wales where the returning provider is not the only organisation that delivers module content.&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity records the delivery organisation(s) for a Module.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To monitor the organisations that deliver module content.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Module delivery role" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Module instance" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Module instance&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;ModuleInstance&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;Providers in England that are registered with the Office for Students in the &apos;Approved&apos; category are not required to return Module data but can do so optionally.&lt;/p&gt;&lt;p&gt;Providers in England that are registered with the Office for Students in the &apos;Approved (fee cap)&apos; category must return Module data.&lt;/p&gt;&lt;p&gt;Further information regarding the OfS register can be found &lt;a href = \&quot;https://www.officeforstudents.org.uk/advice-and-guidance/the-register/the-ofs-register\&quot;&gt;here&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Module data is optional to return for postgraduate research students and incoming exchange students.&lt;/p&gt;&lt;p&gt;This entity associates a StudentCourseSession with a Module that a student is engaging with as part of that StudentCourseSession, including the module outcome.&lt;/p&gt;&lt;p&gt;ModuleInstances should be submitted against the StudentCourseSession, not just the reference period in which they occurred. Therefore all of the ModuleInstance associated with the StudentCourseSession will be returned for the reference period in which the StudentCourseSession finishes.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Modules spanning StudentCourseSessions&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;One Module instance can only be associated with one StudentCourseSession and therefore cannot span StudentCourseSessions. If a student&apos;s engagement with a Module spans two or more StudentCourseSessions, then multiple Module instances are required, one associated with each StudentCourseSession. The first would have an associated module outcome where ModulInstance.MODULEOUTCOME= 06 &apos;Will complete Module in a subsequent StudentCourseSession&apos;. Both ModuleInstances returned could be linked to the same Module.&lt;/p&gt;&lt;p&gt;If at the end of the StudentCourseSession the student has completed activity but the result is not yet known, a ModuleInstance.MODULEOUTCOME of 05 Module result not yet known can be returned for students where module result information is required to indicate this&lt;/p&gt;&lt;p&gt;Where a student is resitting a module in a subsequent StudentCourseSession (whether resitting teaching or just exams), the ModuleInstance.CONTINUING field would not be returned as they are resitting assessment rather than continuing the module. If returning fees on a modular basis, any fees associated with this resit would be returned in ModuleInstance.MIFEEAMOUNT. If returning fees on a StudentCourseSession basis, any fees associated with this resit would be returned in StudentCourseSession.SCSFEEAMOUNT.&lt;/p&gt;&lt;p&gt;In some cases a ModuleInstance may be returned to record the outcome of a module only, this may be because the student is resitting exams, or the outcome was not confirmed at the end of the previous StudentCourseSession. In these cases, the ModuleInstance.INACTIVEMOD field would be returned to indicate that there was no activity associated with the ModuleInstance. The start and end dates for the ModuleInstance would align with the start date for the associated StudentCourseSession.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Providers in England and Northern Ireland&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Whilst providers may recognise prior learning and allow students to take APEL modules, APEL modules should not be returned in the student record by providers in England and Northern Ireland. This is to prevent confusion over those modules taken through APEL and those not undertaken through APEL, to avoid FTE being allocated incorrectly.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;An entity is required for each interaction a student has with a Module at providers in Northern Ireland, Scotland and Wales and Approved (fee cap) providers in England where Engagement.INCOMINGEXCHANGE does not exist and Qualification.QUALCAT starts with E, M, H, I, J or C.Optional for each interaction a student has with a Module at Approved providers in England or where Engagement.INCOMINGEXCHANGE exists or where Qualification.QUALCAT starts with D or L.&quot;,&#xd;
+    &quot;Description&quot;: &quot;The Module instance records a Student&apos;s specific engagement with a Module and the Module outcome.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To record the Modules that Students engage with, to record module outcomes.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Module instance" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Module subject" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Module subject&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;ModuleSubject&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;Providers in England are not required to return Module subject data but can do so optionally.&lt;/p&gt;&lt;p&gt;Providers must return at least one and no more than 3 occurrences of module subject per Module.  An entry is required for each subject area of study of the module regardless of whether this subject area of study is taught by the reporting provider or not.&lt;/p&gt;&lt;p&gt;The module subject(s) must represent the subject(s) taught in the module, and should represent directly, or relate very closely to, the Module Title.&lt;/p&gt;&lt;p&gt;If the subject(s) of a given Module change in any of the following ways, a new Module would be required to be returned:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;The majority subject changes&lt;/li&gt;&lt;li&gt;A new subject is introduced with a ModuleSubject.MODPROPORTION of more than 5%&lt;/li&gt;&lt;li&gt;A subject with a ModuleSubject.MODPROPORTION of more than 5% is removed&lt;/li&gt;&lt;li&gt;The proportions of the subjects within a Module change by more than 5%.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;If the subjects change within these parameters, a new Module is not required and the ModuleSubject(s) are updated to record the new subject(s).&lt;/p&gt;&lt;p&gt;For example, a Module has two subjects of History and Politics with proportions of 25% and 75% respectively:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;The proportions change to be 30% History and 70% Politics: a new Module is not required as the proportion change is 5% or less.&lt;/li&gt;&lt;li&gt;The proportions change to 60% History and 40% Politics: a new Module is required as the proportions have changed by more than 5% and there is a new majority subject.&lt;/li&gt;&lt;li&gt;The subjects change to be History (20%), Politics (60%) and Sociology (20%): a new Module is required as a new subject has been introduced with a proportion of more than 5%.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Additional guidance regarding assigning subject codes can be found in the &lt;a href= \&quot;https://www.hesa.ac.uk/innovation/hecos\&quot;&gt;HECoS implementation guide.&lt;/a&gt;&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All Modules at providers in Northern Ireland, Scotland and Wales.Optional for all Modules at providers in England.&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity records the subject or subjects of a module.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;For analysis of modules by subject.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Module subject" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST National identity" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;National identity&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;NationalIdentity&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This data must be returned for all students in coverage at the start of their Engagement i.e. by the end of the reference period in which their first associated StudentCourseSession begins. If the data is not known by the provider 99 &apos;Not available&apos; should be returned in NationalIdentity.NATIOND&lt;/p&gt;&lt;p&gt;This data must be updated throughout a Student&apos;s Engagement where applicable.&lt;/p&gt;&lt;p&gt;A student can identify themselves as having up to two national identities.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All Students at providers in Wales where EntryProfile.PERMADDCOUNTRY = XI where Engagement.INCOMINGEXCHANGE does not exist.Optional, but strongly encouraged, for all Students at providers in England where Course.TTCID = 01 or 02.Must not be returned outside of the stated coverage.&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity records the national identity of the Student. National identity is different from both ethnicity and nationality and could be based on many things including, for example, culture, language or ancestry/family history. National identity reflects how an individual chooses to classify themself.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To monitor the impact of policies and practices on Students of Welsh or other UK background, To compare sector data with that from other areas of the economy, For ITT Students, to respond to Parlimentary Questions, Written Questions, FOI requests on complex citizenship/nationality issues. To be able to perform analysis on trainee demographics at the start of an academic year.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST National identity" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Off venue activity" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Off venue activity&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;OffVenueActivity&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;An OffVenueActivity is required to be returned where:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;The student is undertaking a placement in the UK, with the exceptions of teacher training placements in Scotland and clinical placements (see below)&lt;/li&gt;&lt;li&gt;The student is outside the UK, with the exceptions of where they are writing up (SessionStatus.STATUSCHANGEDTO = 04) or where they will spend the majority of their Engagement outside the UK (StudyLocation.PRINONUK = 01) &lt;/li&gt;&lt;li&gt;The above activities  are 20 days or longer in duration, (including where OffVenueActivities that are between 5 and 20 days duration have a combined duration of at least 20 days) with the exception of teacher training placements in England which are returned irrespective of duration. &lt;/li&gt;&lt;/ul&gt;&lt;p&gt;If the student is undertaking this activity at the reporting providers or a partners venue (for example they are studying abroad at a partners venue or undertaking a placement at the providers own venue), this should be returned in this entity. &lt;/p&gt;&lt;p&gt;OffVenueActivities need to be submitted for the full StudentCourseSession, not just the reference period they occurred in. For example, if the activity occurs at the beginning of the StudentCourseSession it must continue to be returned in every reference period the StudentCourseSession spans.&lt;/p&gt;&lt;p&gt;An OffVenueActivity is not required for the following:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Distance learning, this is recorded in StudyLocation&lt;/li&gt;&lt;li&gt;Teacher training placements in Scotland &lt;/li&gt;&lt;li&gt;Clinical placements (see below)&lt;/li&gt;&lt;li&gt;Where the student will spend the majority of their Engagement outside the UK, OffVenueActivity information is not required for the time they spend outside the UK. OffVenueActivity information is still required where they undertake a placement in the UK.&lt;/li&gt;&lt;li&gt;Where the student is writing up outside the UK&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Clinical Placements&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Statutory clinical placements should not be returned in this entity. That is, any clinical placement which is a compulsory element of the students course. It includes, but not exclusive to:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Social Care&lt;/li&gt;&lt;li&gt;Midwifery&lt;/li&gt;&lt;li&gt;Healthcare&lt;/li&gt;&lt;li&gt;Veterinary&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The below definition has been provided by Health Education England for the placements that they will monitor separately:&lt;/p&gt;&lt;p&gt;&apos;Any suitable supervised clinical, practical or other learning experience in a workplace environment provided, conducted or arranged by the placement provider for Learners; usually but not limited to an NHS trust, Foundation trust, GP surgery, dental practice and other organisations that form part of the National Health Service or who deliver placement learning funded by the NHS which for the purposes of this Agreement includes the private and voluntary sectors.&apos;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;OffVenueActivity duration&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Teacher training placements in England must be returned irrespective of duration.&lt;/p&gt;&lt;p&gt;All other OffVenueActivities that contain more than 20 days duration of activity are mandatory to return. OffVenueActivities that are between 5 and 20 days duration but, when combined with other OffVenueActivities achieved over the StudentCourseSession, sum to a total length of 20 days or more must also be returned. All activity should be first reported in the reference period where the 20 day duration has been achieved.&lt;/p&gt;&lt;p&gt;Although optional, providers should be encouraged to return off venue activities that are less than 20 days in length.&lt;/p&gt;&lt;p&gt;If the placement spans more than one StudentCourseSession, the provider should split the activity between sessions, but only if the split activity puts at least 20 days in each StudentCourseSession. If splitting the activity would result in less than 20 days being reported for one of the sessions, then it should not be split. In these cases, the extra days should be returned in the session with the majority of the duration&lt;/p&gt;&lt;p&gt;If an activity spans StudentCourseSessions (with at least 20 days in each) the activity should be split between the StudentCourseSessions with the duration and dates reflecting the period attached to the current StudentCourseSession only&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Actual and planned dates&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;In this example, the full OffVenueActivity is contained within one StudentCourseSession.&lt;/p&gt;&lt;p&gt;The student starts their placement part way through reference period one. At the point of returning reference period one data to HESA the student is still on their placement and has completed more than 20 days. The student finishes their placement in reference period two.&lt;/p&gt;&lt;p&gt;In reference period one, return the placement activity start date and provide an estimate for the end date with the estimated duration calculated based on difference between the two, excluding expected days not worked, weekends, holidays etc. In reference period two you would then return the placement with the same start date and use the correct end date and duration.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All StudentCourseSessions where OffVenueActivity is undertaken, please see guidance below for exceptions.&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity records details of a Student&apos;s placement activity or time spent abroad.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To enable analysis of the delivery of placements or activity abroad; to enable analysis of student mobility and placements; to monitor how this activity impacts on student attainment and graduate outcomes; to monitor the characteristics of students undertaking this activity.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Off venue activity" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Qualification" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Qualification&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;Qualification&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;The Qualification entity records information regarding any qualifications that either students can aim for or the provider awards.&lt;/p&gt;&lt;p&gt;Qualifications that students aim for will be associated with the appropriate Course to indicate the aim of that Course.&lt;/p&gt;&lt;p&gt;Qualifications that students achieve will be associated with the appropriate QualificationAwarded entity to show which student(s) achieved the award.&lt;/p&gt;&lt;p&gt;There may be Qualifications that are awarded to students but are not aims of a Course, for example if they are awarded as an exit award if a student were to leave their programme early, but not offered as a standalone Course.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;A Qualification entity is required for each qualification a provider offers or awards.&quot;,&#xd;
+    &quot;Description&quot;: &quot;A formally recognised academic award, such as a degree, diploma, certificate or credits. Every qualification which the provider offers or awards should be expressed as a Qualification entity, using a common framework.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To record students&apos; qualification aims and awards, to allow analysis of Students and Leavers by qualification and level.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Qualification" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Qualification award accreditation" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Qualification award accreditation&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;QualificationAwardAccreditation&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity records the accreditation of the qualification awarded to the student from a Professional, Statutory or Regulatory body (PSRB) for architecture, teaching and clinical bodies.&lt;/p&gt;&lt;p&gt;For details on the applicable accreditations, please see QualificationAwardedAccreditation.ACCREDITATIONID.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All QualificationAwarded entities where applicable&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity indicates the accreditation the Student achieved upon achieving their Qualification.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To identify the accreditation the Student has achieved including identifying Students who have achieved Qualified Teacher Status (QTS).&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Qualification award accreditation" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Qualification awarded" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Qualification awarded&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;QualificationAwarded&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity allows for the details of each qualification that a student is awarded to be returned. &lt;/p&gt;&lt;p&gt;Qualifications should be returned only when the awarding body has confirmed that the student has gained the award. Regulating bodies may check qualifications returned against data provided by awarding bodies, and query providers about discrepancies.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Interim awards&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;It is recognised, that there are courses where interim qualifications are awarded. Providers that award interim qualifications for students within an Engagement can return the information related to the interim qualification in the Qualifications awarded entity. In these cases a qualification would be returned without a Leaver entity.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;A QualificationAwarded entity is required for each qualification a Student achieves.&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity holds information related to a Qualification a Student has achieved.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To monitor the achievement of qualification aims and the classification of awards for publication on the Unistats website.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Qualification awarded" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Qualification subject" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Qualification subject&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;QualificationSubject&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity records the subject(s) of the qualification with associated proportions. The entity is returned once per subject.&lt;/p&gt;&lt;p&gt;The qualification subject(s) must represent directly, or relate very closely to, the wording on the qualification&apos;s official certificate of award.&lt;/p&gt;&lt;p&gt;Up to five subjects can be returned however more than three qualification subjects would generally be considered as exceptional.&lt;/p&gt;&lt;p&gt;Please see the &lt;a href = \&quot;https://www.hesa.ac.uk/innovation/hecos\&quot;&gt;HECoS implementation guide for more guidance on the allocation of subjects&lt;/a&gt;&lt;/p&gt;&lt;p&gt;If the subject(s) of a given Qualification change in any of the following ways, a new Qualification would be required to be returned:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;The majority subject changes&lt;/li&gt;&lt;li&gt;A new subject is introduced with a QualificationSubject.QUALPROPORTION of more than 5%&lt;/li&gt;&lt;li&gt;A subject with a QualificationSubject.QUALPROPORTION of more than 5% is removed&lt;/li&gt;&lt;li&gt;The proportions of the subjects within a qualification change by more than 5%.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;If the subjects change within these parameters, a new Qualification is not required and the QualificationSubject(s) are updated to record the new subject(s).&lt;/p&gt;&lt;p&gt;For example, a Qualification has two subjects of History and Politics with proportions of 25% and 75% respectively:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;The proportions change to be 30% History and 70% Politics: a new Qualification is not required as the proportion change is 5% or less.&lt;/li&gt;&lt;li&gt;The proportions change to 60% History and 40% Politics: a new Qualification is required as the proportions have changed by more than 5% and there is a new majority subject.&lt;/li&gt;&lt;li&gt;The subjects change to be History (20%), Politics (60%) and Sociology (20%): a new Qualification is required as a new subject has been introduced with a proportion of more than 5%.&lt;/li&gt;&lt;/ul&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All Qualifications&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity records the subject(s) of the Qualification.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To record Qualification subjects, to allow analysis of the student population by subject.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Qualification subject" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Reference period student load" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Reference period student load&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;ReferencePeriodStudentLoad&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;One entity must be returned for each reference period that the StudentCourseSession overlaps with.Typically, we would expect either 3 or 4 entities to be returned for active students per Student course session (for standard or non-standard students respectively). The reference period that the FTE in ReferencePeriodStudentLoad.RPSTULOAD applies to is identified by the ReferencePeriodStudentLoad.YEAR and ReferencePeriodStudentLoad.REFPERIOD fields.Generally, all entities associated with a Student course session should add up to equal no more than 100, unless the student is on an accelerated course or studying at a greater intensity.&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All StudentCourseSessions at providers in England, Northern Ireland or Wales.&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity records the full-time equivalence for Students returned every reference period in a Student course session. &quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To record the intensity of students&apos; activity, to allow the calculation of activity across different reference periods. This is used in SLC eligibility and take up rates.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Reference period student load" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Session status" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Session status&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;SessionStatus&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity must be returned to record where the student changes status during their StudentCourseSession. The relevant status is returned in SessionStatus.STATUSCHANGEDTO with the SessionStatus.STATUSVALIDFROM recording the date on which the status changed.&lt;/p&gt;&lt;p&gt;For details of each status and when they would be returned, please see SessionStatus.STATUSCHANGEDTO.&lt;/p&gt;&lt;p&gt;When a StudentCourseSession is returned, all relevant SessionStatus records for that StudentCourseSession must be returned. For example, if the student changed status at the start of the StudentCourseSession, the SessionStatus update must continue to be returned in each reference period that the StudentCourseSession spans.&lt;/p&gt;&lt;p&gt;Where the students status is writing up, the SessionStatus must continue to be returned in every reference period, even if the student moved to writing up status in a previous StudentCourseSession.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All StudentCourseSessions where applicable&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity records the status of the StudentCourseSession, where applicable.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To monitor student&apos;s status changes including recording periods of dormancy and when research students move to writing up. &quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Session status" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Session Year" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Session Year&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;SessionYear&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;The SessionYear indicates the planned course years offered by a provider.&lt;/p&gt;&lt;p&gt;SessionYears are not required to be returned for fully flexible courses or postgraduate research courses.&lt;/p&gt;&lt;p&gt;SessionYears must be a year in length, with the exception of SessionYears representing courses that are shorter than one year in their entirety, which should reflect the full length of the course.&lt;/p&gt;&lt;p&gt;Different SessionYears do not have to be returned to reflect different courses, types of study or modes of study. A new SessionYear is only required to record different dates.&lt;/p&gt;&lt;p&gt;If a provider offers a number of courses that start within a short space of time, different SessionYears are not required however the SessionYear.SYSTARTDATE must be within 14 days of the actual planned start date of the course.&lt;/p&gt; &lt;p&gt;For example:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;A provider has a number of 3-year undergraduate courses that start on the 21st September 2020. A SessionYear is required to be returned with the start date 2020-09-21 and end date 2021-09-20. A subsequent SessionYear would be needed for each year that the course runs. Each SessionYear could be associated with students studying any courses, modes, years of programmes or type of activity (e.g. foundation years, placements) provided the dates reflect their planned start dates.&lt;/li&gt;&lt;li&gt;A provider runs a 3-month course over the summer. One SessionYear is required to be returned for each time this course runs, each SessionYear would be 3 months long.&lt;/li&gt;&lt;li&gt;A provider runs an 18-month course starting on the 21st September 2020. As the Course is more than a year in length, the SessionYears must be a yearlong. A yearlong SessionYear would be returned starting on 21st September for each year that the course runs. This means that first and second year students can be associated with the same SessionYear provided the SessionYear start date records the planned start date of their year of study.&lt;/li&gt;&lt;li&gt;A provider runs a course that has entry points in September, January and April. A SessionYear is required for each entry point so 3 SessionYears would be returned for each year the course runs, starting in September, January and April.&lt;/li&gt;&lt;/ul&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;A SessionYear is required for each combination of start and end dates a provider offers unless Course.FULLYFLEX = 01 or Qualification.QUALCAT starts with D or L.&quot;,&#xd;
+    &quot;Description&quot;: &quot;The SessionYear records the planned course years offered by a provider.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To record the planned course years in order to give context to the associated StudentCourseSessions to identify, for example, late starters or students moving between cohorts.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Session Year" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Student" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Student&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;Student&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;A Student record must be returned for each student that meets the coverage criteria of the HESA student record.&lt;/p&gt;&lt;p&gt;Full details of the coverage statement can be found in the &lt;a href = \&quot;https://www.hesa.ac.uk/collection/student/datafutures/coverage_of_the_record\&quot;&gt; Coverage of the record&lt;/a&gt;&lt;/p&gt;&lt;p&gt;As the coverage requires that a student has attended a provider before they need to be returned, if a Student entity exists, there must also be an associated Engagement and StudentCourseSession to show the activity that meets the coverage of the record.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;An entity is required for each Student within the coverage of the record.&quot;,&#xd;
+    &quot;Description&quot;: &quot;Holds the attributes of the student engaging with education.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;This entity exists to hold elements that describe the student and to hold the engagements relating to the student.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Student" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Student accreditation aim" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Student accreditation aim&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;StudentAccreditationAim&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;&lt;strong&gt;Teacher training accreditation&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;For student in England and Wales on teacher training courses (where Course.TTCID = 01 or 02), this entity must be returned to record the specific accreditation from the Department for Education (England) or the Education Workforce Council (EWC).&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Health and Social Care accreditations&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Accreditations from the Nursing and Midwifery Council, the General Dental Council and the Health Care Professions Council only should be recorded.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Generic accreditation&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Where the associated Course has a generic accreditation (CurriculumAccreditation.ACCREDITATIONID = 05802, 06920 or 11108), this entity records the specialism once the student has specialised.&lt;/p&gt;&lt;p&gt;Before the student has specialised, this entity should not be returned.&lt;/p&gt;&lt;p&gt;It is expected that specialisms would have been established by the students final year.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Multiple accreditations&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Where the associated Course has multiple accreditations and the student specialises, this entity should be returned to reflect this specialism.&lt;/p&gt;&lt;p&gt;If the associated Course has multiple accreditations and students who successfully complete the Course achieve each of these, this entity is not required.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All Engagements in England or Wales where Course.TTCID = 01 or 02.All Engagements where CurriculumAccreditation.ACCREDITATIONID = 05802, 06920 or 11108 and the student has specialised.All Engagements where CurriculumAccreditation.ACCREDITATIONID = 05803-05809, 06901-06919 or 11101-11107 where applicable.&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity collects the intended accreditation for teacher training or where a student has specialised part way through their course.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To record further details about teacher training students in England and Wales.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Student accreditation aim" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Student course session" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Student course session&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;StudentCourseSession&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;A StudentCourseSession associates a Student with the Course that the student is engaging with. In most cases, the StudentCourseSession will represent a year of the student&apos;s study.&lt;/p&gt;&lt;p&gt;The StudentCourseSession is also associated with the relevant SessionYear that reflects the planned start date of the year of programme they are engaging with.&lt;/p&gt;&lt;p&gt;The associated SessionYear will represent a year of the programme. The dates returned on the StudentCourseSession will reflect the start and end of the students activity within that session year. The StudentCourseSession dates may therefore differ from the SessionYear dates if the student starts the year late or leaves early.&lt;/p&gt;&lt;p&gt;Please see the SessionYear guidance for guidance on returning SessionYears.&lt;/p&gt;&lt;p&gt;StudentCourseSessions must be returned in line with the below principles:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;The start and end dates of the StudentCourseSesion must fall between the start and end dates of the associated SessionYear.&lt;/li&gt;&lt;li&gt;StudentCourseSessions must not be longer than a year&lt;/li&gt;&lt;li&gt;An Engagement  cannot have overlapping StudentCourseSessions&lt;/li&gt;&lt;li&gt;If a student transfers between different Courses within the same Engagement,  the first StudentCourseSession must be closed and a new StudentCourseSession opened associated with the new Course. In these cases, StudentCourseSessions may be shorter than a year, depending on when the transfer happens.&lt;/li&gt;&lt;li&gt;Once submitted, a StudentCourseSession must continue to be returned until the StudentCourseSession.SCSENDDATE is returned to indicate it has ended. If there is no activity for an open StudentCourseSession in a given reference period, the StudentCourseSession would still be returned with the FTE information and SessionStatus indicating that the student is dormant.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Postgraduate research and fully flexible courses&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;For these courses, StudentCourseSessions are not required to be associated with a SessionYear as the flexible nature of these programmes means that the concepts of a planned start date and end date often do not apply.When a student starts studying one of these Courses, a StudentCourseSession is returned associated with the relevant Course with the StudentCourseSession.SCSSTARTDATE indicating the students start date. From this point, yearlong StudentCourseSessions would be returned until the student completed their studies with the final StudentCourseSession having a StudentCourseSession.SCSENDDATE indicating their actual end date. Each StudentCourseSession would therefore start at the same point in each year of the students studies.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;In general, one StudentCourseSession must be returned to record each year of activity that a student undertakes on a course as part of their Engagement. In some cases the StudentCourseSession may be less than a year or a StudentCourseSession may be required to record that a student is dormant. Please see guidance for full details.&quot;,&#xd;
+    &quot;Description&quot;: &quot;A Student course session records a specific Student&apos;s activity for a course.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To allow linking between students and Courses, to hold information regarding a student&apos;s study including mode, FTE, type of activity and fees and funding information.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Student course session" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Student financial support" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Student financial support&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;StudentFinancialSupport&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot; &lt;p&gt;A StudentFinancialSupport entity must be returned for all awards of the financial support types listed in StudentFinancialSupport.FINSUPTYPE.&lt;/p&gt;&lt;p&gt;The StudentFinancialSupport entity is associated with the StudentCourseSession in which the student received the financial support.&lt;/p&gt;&lt;p&gt;StudentCourseSessions can be associated with more than one StudentFinancialSupport. For example, a student in receipt of Disabled Students Allowance may also be in receipt of book vouchers.&lt;/p&gt;&lt;p&gt;If the Student has more than one award of the same type, then only one StudentFinancialSupport entity needs to be returned.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;An entity is required for each instance of financial support awarded to a student&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity records where a student has been in receipt of a named financial support type.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To monitor the take-up of various types of financial support, to collect data for Office for Students to assist in understanding of the role that bursaries and other support play in student experience and on the likelihood of continuing studies, to monitor take up of Disabled Students&apos; allowance.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Student financial support" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Student initiatives" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Student initiatives&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;StudentInitiatives&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity allows for the details of the initiative that the Engagement is associated with to be recorded.&lt;/p&gt;&lt;p&gt;An Engagement can have multiple initiatives if this applies, the entity would be returned once for each initiative.&lt;/p&gt;&lt;p&gt;Details of each initiative can be found in StudentInitiatives.INITIATIVEID.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All Engagements where a named Initiative applies.&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity records the specific Initiative(s) associated with the Engagement.&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To enable monitoring of specific schemes of importance to HESA&apos;s public purpose customers.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Student initiatives" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Study location" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Study location&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;StudyLocation&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;A StudyLocation is required to be returned where:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;The student is studying in the UK at the providers or a partners venue&lt;/li&gt;&lt;li&gt;The student is distance learning&lt;/li&gt; &lt;li&gt;The student will spend the majority of their Engagement outside the UK and is currently outside the UK (if they are currently in the UK, their activity is recorded in the same way as other students).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;A StudentCourseSession would have no StudyLocation returned where:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;There is no activity for the StudentCourseSession i.e. the student is dormant.&lt;/li&gt;&lt;li&gt;All the activity for the StudentCourseSession is:&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Recorded in OffVenueActivity, for example the student is on a placement for the full year&lt;/li&gt;&lt;li&gt;Writing up outside the UK (recorded using SessionStatus.STATUSCHANGEDTO = 04 and StudentCourseSession.STUDYABROAD).&lt;/li&gt;&lt;li&gt;A combination of the two&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;p&gt;The StudyLocation entity should be returned multiple times for a StudentCourseSession where applicable, for example, if the student studies at more than one Venue.&lt;/p&gt;&lt;p&gt;The information recorded in this entity should reflect the location(s) for the entire StudentCourseSession, it may therefore change between reference periods if the student does not study at the locations as expected.&lt;/p&gt;&lt;p&gt;For further information and examples, please see the &lt;a href =\&quot;https://www.hesa.ac.uk/collection/student/datafutures/guidance_venue_and_studylocation.pdf\&quot;&gt;Further guidance on returning Venues and StudyLocations document.&lt;/a&gt;&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All StudentCourseSessions where there is activity that is not recorded in OffVenueActivity unless the student is writing up outside the UK&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity records the location(s) associated with the StudentCourseSession, including distance learning&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To record the geographical locations of students for funding allocations, Teaching Excellence and Student Outcomes Framework (TEF) metrics and regional profiles to identify cold spots for certain subjects areas and monitor student migration by subject area.To record the organisations delivering learning at these locations.To record which students are distance learning and whether distance learning students are based in the UK or overseas.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Study location" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Supervisor allocation" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Supervisor allocation&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;SupervisorAllocation&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity collects data on the supervisor(s) of doctoral research students and their unit(s) of assessment.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Providers eligible for REF&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;For providers eligible to complete the REF, this must be returned for all doctoral research students, even if they only have one supervisor, to record the appropriate Unit of Assessment.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Providers not eligible for REF&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;For providers not eligible for REF, this must be returned to record where there is a formal collaborative arrangement to provide doctoral research training. A Unit of Assessment is required to be returned for providers eligible to submit to the REF, even if the submitting provider is not eligible to submit to the REF.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Multiple supervisors&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Where there is formal collaborative arrangement to provide doctoral research training, this entity records the details.&lt;/p&gt;&lt;p&gt;Where there is concurrent collaboration or joint supervision the SupervisorAllocation.SUPALLPROP, SupervisorAllocation.2014UNITOFASSESSMENT, and SupervisorAllocation.HESAID fields should be used to record appropriate details. Only the lead provider should be returning the student&apos;s data.&lt;/p&gt;&lt;p&gt;Where there is a sequential collaboration (i.e. the student starts at one provider and reporting responsibilities are later transferred to another provider) the supervisor allocation entity should reflect the supervision during the time at the reporting provider only.&lt;/p&gt;&quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All StudentCourseSessions where the returning provider is eligible for the REF and Qualification.QUALCAT= D0003, L0000, L0001 and Engagement.INCOMINGEXCHANGE does not exist.All StudentCourseSession where the returning provider is not eligible for the REF and Qualification.QUALCAT = D0003, L0000, L0001 and Engagement.INCOMINGEXCHANGE does not exist and there is a formal collaborative arrangement to provide doctoral research training.&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity collects data on the supervisor(s) of doctoral research students&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To relate research students to their supervisors&apos; provider and REF units of assessment.&quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Supervisor allocation" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Venue" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;Name&quot;: &quot;Venue&quot;,&#xd;
+    &quot;ShortName&quot;: &quot;Venue&quot;,&#xd;
+   &quot;CollectionId&quot;: ${CMID},&#xd;
+    &quot;Version&quot;: ${Version},&#xd;
+    &quot;Notes&quot;: &quot;&lt;p&gt;This entity records details of the provider or a partners Venue so that this can be associated with StudentCourseSessions via the StudyLocation entity.&lt;/p&gt;&lt;p&gt;This therefore allows the recording of the geographical location that a student is at as well as the organisation delivering learning at that location.&lt;/p&gt;&lt;p&gt;Venues outside the UK are not required to be returned.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Providers in England&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;A separate Venue should be returned if 25 or more students are studying at the Venue and it is at least 1km away from another location. In exceptional circumstances Venues that are over 1km a part may not need to be separately identified, if for example they are advertised as one and students frequently move between the two locations.&lt;/p&gt;&lt;p&gt;Occasionally it may be appropriate to return campuses with fewer students, provided these are geographically distinct and separately marketed to students.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Providers in Northern Ireland, Scotland and Wales&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;A separate Venue should be returned if a significant number of students, for example 25 or more, are studying on a Venue that is in a different city/town.&lt;/p&gt;&lt;p&gt;Occasionally it may be appropriate to return campuses with fewer students, provided these are geographically distinct and separately marketed to students.&lt;/p&gt; &quot;,&#xd;
+    &quot;Coverage&quot;: &quot;All Venues&quot;,&#xd;
+    &quot;Description&quot;: &quot;This entity records details of the provider or partners Venue&quot;,&#xd;
+    &quot;ApplicableTo&quot;: &quot;England Northern Ireland Scotland Wales&quot;,&#xd;
+    &quot;ReasonRequired&quot;: &quot;To record the geographical locations of students for funding allocations, Teaching Excellence and Student Outcomes Framework (TEF) metrics and regional profiles to identify cold spots for certain subjects areas and monitor student migration by subject area. To record the organisations delivering learning at these locations. &quot;,&#xd;
+    &quot;published_at&quot;: ${Published},&#xd;
+    &quot;created_at&quot;: ${Published},&#xd;
+    &quot;updated_at&quot;: ${Published}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${host}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="POST Venue" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="host" elementType="Argument">
+            <stringProp name="Argument.name">host</stringProp>
+            <stringProp name="Argument.value">https://coding-manual-pub-dev.azurewebsites.net/entities</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="CMID" elementType="Argument">
+            <stringProp name="Argument.name">CMID</stringProp>
+            <stringProp name="Argument.value">&quot;C212345&quot;</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Version" elementType="Argument">
+            <stringProp name="Argument.name">Version</stringProp>
+            <stringProp name="Argument.value">&quot;1.0&quot;</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Published" elementType="Argument">
+            <stringProp name="Argument.name">Published</stringProp>
+            <stringProp name="Argument.value">&quot;2021-03-03T12:56:05.000Z&quot;</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Content-Type</stringProp>
+            <stringProp name="Header.value">application/JSON</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
